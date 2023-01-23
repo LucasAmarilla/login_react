@@ -1,9 +1,12 @@
 import Input from "./Input"
-export default function Login() {
+export default function Login(props) {
   return(
   <form className="form">
         <Input type="text" place="Username"/>
         <Input type="password" place="Password" />
-        <button type="submit">Login</button>
+        {props.isRegistered && <Input type="password" place="Confirme Password" />}
+        <button type="submit">
+          {props.isRegistered ? "Login" : "Register"}
+        </button>
     </form>)
 }
